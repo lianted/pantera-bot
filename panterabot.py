@@ -14,7 +14,9 @@ from commands.partidas import listar_proximas_partidas, formatar_partidas
 from commands.historico import buscar_historico, formatar_historico 
 
 
-TOKEN = os.environ['TELEGRAM_TOKEN']
+TOKEN = os.getenv('TELEGRAM_TOKEN')
+if not TOKEN:
+    raise ValueError("❌ Token do Telegram não configurado. Defina a variável TELEGRAM_TOKEN no Railway.")
 
 def print_banner():
     banner = """
