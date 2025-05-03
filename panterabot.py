@@ -14,8 +14,7 @@ from commands.partidas import listar_proximas_partidas, formatar_partidas
 from commands.historico import buscar_historico, formatar_historico 
 
 
-load_dotenv()
-TOKEN = os.getenv("TELEGRAM_TOKEN")
+TOKEN = os.environ['TELEGRAM_TOKEN']
 
 def print_banner():
     banner = """
