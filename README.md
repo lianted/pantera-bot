@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🐆 Pantera News — Bot do time de CS2 DA FURIA
 
 **Pantera News** é um bot Telegram desenvolvido para acompanhar em tempo real os jogos da FURIA Esports no CS2. O bot oferece estatísticas, agenda de partidas, histórico da organização, etc.
@@ -87,3 +88,7 @@ Contribuições são bem-vindas! Abra uma issue ou envie um pull request com sug
 ## 📄 Licença
 
 Este projeto está licenciado sob a licença MIT.
+=======
+# pantera-bot
+Pantera News — Bot do time de CS2 DA FURIA
+>>>>>>> 42d210c1b0749af10842a6978fdc639a4e9b9d5e
