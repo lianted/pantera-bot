@@ -1,5 +1,8 @@
+from email.mime import application
 import os
 import asyncio
+import threading
+import requests
 from dotenv import load_dotenv
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, CallbackContext
@@ -33,6 +36,14 @@ def print_banner():
     """
     from datetime import datetime
     print(banner.format(hora_atual=datetime.now().strftime("%d/%m/%Y %H:%M:%S")))
+
+async def keep_alive():
+    while True:
+        try:
+            requests.get('https://pantera-bot.up.railway.app')
+            await asyncio.sleep(300)
+        except Exception as e:
+            print(f"Erro no keep-alive: {e}")
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     mensagem = (
@@ -194,3 +205,11 @@ def main():
 
 if __name__ == "__main__":
     main()
+try:   
+        threading.Thread(target=lambda: asyncio.run(keep_alive()), daemon=True).start()
+        
+        PORT = int(os.environ.get('PORT', 5000))
+        application.run(port=PORT)
+except Exception as e:
+        print(f"Erro crítico: {e}")
+
