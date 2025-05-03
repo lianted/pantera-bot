@@ -1,0 +1,14 @@
+{
+    "build": {
+      "builder": "nixpacks",
+      "config": {
+        "startCommand": "python panterabot.py",
+        "variables": {
+          "TELEGRAM_TOKEN": {
+            "description": "Token do Bot Telegram",
+            "required": true
+          }
+        }
+      }
+    }
+  }
